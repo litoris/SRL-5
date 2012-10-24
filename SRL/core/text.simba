@@ -1306,7 +1306,29 @@ begin
       Exit;
   Result := False;
 end;
+(*
+GetWildernessLevel
+~~~~~~~~~~~~
 
+.. code-block:: pascal
+
+    function GetWildernessLevel: Integer;
+
+Returns the wilderness level. Defaults to -1 if the number can't be read (out of wilderness)
+
+.. note::
+
+  by litoris & Nebula
+
+Example:
+
+.. code-block:: pascal
+
+*)
+function GetWildernessLevel : Integer;
+begin
+  Result := StrToIntDef(GetNumbers(GetTextAtExWrap(490, 85-50, 508, 102-50, 0, 10, 1, 1939681, 20, XPChars)), -1);
+end;
 {*******************************************************************************
 procedure SetDebugColors(Text, Back: Integer);
 By: Nava2
